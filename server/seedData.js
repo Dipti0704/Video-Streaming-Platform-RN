@@ -12,7 +12,7 @@ export const animeData = [
     comments: [],
     thumbnail_url:
       "https://res.cloudinary.com/dponzgerb/image/upload/v1728726323/bdnvc1ewa7e7o0ueqgdt.jpg",
-    stream_url: "http://10.51.11.119:8080/output.m3u8",
+    stream_url: "http://10.51.11.119:8080/output2.m3u8",
     is_live: true,
   },
   {

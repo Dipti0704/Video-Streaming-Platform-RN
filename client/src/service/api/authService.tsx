@@ -8,12 +8,12 @@ import { useAnimeStore } from '../animeStore';
 import { useWS } from '../sockets/WSProvider';
 
 
-export const login = async (userInfo: { email: string; name: string; picture?: string }, updateAccessToken: () => void) => {
+export const login = async (userInfo: { idToken: string }, updateAccessToken: () => void) => {
     try {
-        console.log('Attempting login with:', userInfo);
+        console.log('Attempting login with Google ID Token');
         console.log('API URL:', `${BASE_URL}/auth/login`);
         
-        const apiRes = await axios.post(`${BASE_URL}/auth/login`, userInfo);
+        const apiRes = await axios.post(`${BASE_URL}/auth/login`, { idToken: userInfo.idToken });
         console.log('Login response:', apiRes.data);
         
         const { tokens, user } = apiRes.data;

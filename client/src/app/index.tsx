@@ -61,7 +61,7 @@ const Page = () => {
 
     useEffect(() => {
         if (loaded && rootNavigationState?.key) {
-            tokenCheck()
+             tokenCheck()
         }
     }, [loaded, rootNavigationState?.key])
 

@@ -12,6 +12,7 @@ const userSchema = new Schema(
       unique: true,
     },
     email: { type: String, required: true, unique: true },
+    googleId: { type: String },
     picture: { type: String },
   },
   {
@@ -23,7 +24,7 @@ userSchema.methods.createAccessToken = function () {
   return jwt.sign(
     {
       id: this._id,
-      name: this.first_name + this.last_name,
+      name: this.name,
       username: this.username,
     },
     process.env.ACCESS_TOKEN_SECRET,
